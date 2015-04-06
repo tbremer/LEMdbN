@@ -6,6 +6,7 @@
 A basic Ubuntu 14.04 Vagrant set up with NGINX, MongoDB and Nodejs
 
 -	[LEMdbN](#LEMdbN)
+	- 	[Todo](#todo)
 	-	[Requirements](#requirements)
 	-	[Setup](#setup)
 	-	[Usage](#usage)
@@ -13,6 +14,11 @@ A basic Ubuntu 14.04 Vagrant set up with NGINX, MongoDB and Nodejs
 	-	[Installed Node Modules](#instaalled-node-modules)
 	-	[NGINX](#NGINX)
 	-	[Vagrant](#vagrant)
+
+##TODO
+- Auto symlink `sites-available` on vagrant provision
+- Setup and test MongoDB for start page
+- Remove MySQL References throughout example site.
 
 ##Requirements
 

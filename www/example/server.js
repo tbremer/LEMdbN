@@ -7,7 +7,7 @@ var path = require("path");
 var express = require("express");
 var app = express();
 var winston = require("winston");
-var mysql = require("mysql");
+//var mysql = require("mysql");
 
 //
 // SERVER VARS
@@ -16,16 +16,6 @@ var port = 3000;
 var assetsDir = {root: path.join(__dirname, 'app/assets')};
 var pubDir = {root: path.join(__dirname, 'public/')};
 var logsDir = path.join(__dirname, 'logs/');
-
-//
-// MYSQL VARS
-//
-var connectionInfo = {
-  host     : 'localhost',
-  user     : 'root',
-  password : '',
-  database : 'database'
-};
 
 //
 // LOGGING
@@ -59,20 +49,7 @@ app.get("/", function(req, res) {
 app.get("/mysql/test", function (req, res) {
   res.set('Content-Type', 'application/json');
 
-  var connection = mysql.createConnection(connectionInfo);
-
-  connection.connect(function(err) {
-    if (err) {
-      logger.error('error connecting: ' + err.stack);
-      res.send({success: false});
-      return;
-    }
-
-    logger.debug('connected as id ' + connection.threadId);
-    res.send({success: true});
-  });
-
-  connection.end();
+  res.send({success: true});
 });
 
 app.get("/log/query", function (req, res) {
