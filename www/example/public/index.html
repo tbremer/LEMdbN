@@ -23,7 +23,7 @@
                     <li>linux: <i class="fa fa-thumbs-o-up"></i></li>
                     <li>nginx: <i class="fa fa-thumbs-o-up"></i></li>
                     <li>express: <i class="fa fa-thumbs-o-up"></i></li>
-                    <li>mongodb: <span class='js-mysql-isworking'></span></li>
+                    <li>mysql: <span class='js-mysql-isworking'></span></li>
                 </ul>
             </div>
         </section>
@@ -52,15 +52,13 @@
     (function ($) {
         $(function () {
             $.ajax({
-                url: 'http://local.api.tbremer.com:8888/mongo/test',
+                url: '/mysql/test',
                 type: 'GET',
                 dataType: 'json',
                 error: function () {
-                    console.error(arguments);
                     $('.js-mysql-isworking').html('<i class="fa fa-thumbs-o-down"></i>');
                 },
                 success: function (data) {
-                    console.info(data);
                     if (data.success) {
                         $('.js-mysql-isworking').html('<i class="fa fa-thumbs-o-up"></i>');
                         return;
